@@ -1,42 +1,13 @@
 "use client";
 
-import { supabase } from "@/lib/supabaseClient";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
-export default function SignIn() {
-  const router = useRouter();
-
-  const handleGoogleLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-    });
-    if (error) {
-      console.error("Error signing in with Google:", error.message);
-    }
-  };
-
-  useEffect(() => {
-    const checkSession = async () => {
-      const { data: sessionData } = await supabase.auth.getSession();
-      if (sessionData?.session) {
-        router.push("/mypage"); // ログイン済みならマイページへリダイレクト
-      }
-    };
-
-    checkSession();
-  }, [router]);
-
+export default function SignUp() {
   return (
     <div className="flex justify-center items-center h-screen">
-      <div>
-        <h1 className="text-2xl font-bold mb-4">Googleでサインインできます</h1>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={handleGoogleLogin}
-        >
-          Googleでサインイン
-        </button>
+      <div className="text-center">
+        <h1 className="text-3xl font-bold mb-4">現在作成中</h1>
+        <p className="text-gray-500">
+          サインアップ機能は現在準備中です。もう少しお待ちください！
+        </p>
       </div>
     </div>
   );

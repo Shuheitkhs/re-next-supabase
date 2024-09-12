@@ -28,15 +28,29 @@ export default function SignIn() {
     checkSession();
   }, [router]); // router を依存配列に追加
 
+  // サインアップボタンを押したときのハンドラー
+  const handleSignUpRedirect = () => {
+    router.push("/auth/signup"); // サインアップページにリダイレクト
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div>
-        <h1 className="text-2xl font-bold mb-4">Sign in with Google</h1>
+        <h1 className="text-2xl font-bold mb-4">Googleでサインインできます</h1>
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={handleGoogleLogin}
         >
-          Sign in with Google
+          Googleでサインイン
+        </button>
+        <h1 className="text-2xl font-bold mt-4 py-2">
+          専用のアカウントを作成する
+        </h1>
+        <button
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleSignUpRedirect} // サインアップページに遷移
+        >
+          【作成中】アカウント作成フォームを作成中です！
         </button>
       </div>
     </div>

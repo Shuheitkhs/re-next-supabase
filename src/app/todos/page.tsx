@@ -93,7 +93,7 @@ export default function TodoListPage() {
 
             {todo.user_id === userId && ( // 自分のTodoだけに編集ボタンを表示
               <button
-                className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
+                className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-2"
                 onClick={() => handleEdit(todo.id)}
               >
                 編集

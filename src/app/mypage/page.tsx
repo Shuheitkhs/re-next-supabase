@@ -44,13 +44,13 @@ export default function MyPage() {
       <h1 className="text-2xl font-bold mb-4">マイページ</h1>
       <p>こんにちは、{displayName} さん</p> {/* Display Nameを表示 */}
       <button
-        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
         onClick={handleSignOut}
       >
         ログアウト
       </button>
       <a href="/todos" className="text-blue-500 hover:underline mt-4 block">
-        TODOリストを見る
+        TODOリストに戻る
       </a>
     </div>
   );

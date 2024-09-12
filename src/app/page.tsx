@@ -32,13 +32,13 @@ export default function HomePage() {
           </p>{" "}
           {/* userが存在する場合 */}
           <button
-            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded m-2"
+            className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded m-2"
             onClick={() => router.push("/todos")}
           >
             Todo一覧を見る
           </button>
           <button
-            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded m-2"
+            className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded m-2"
             onClick={() => router.push("/todos/create")}
           >
             新しいTodoを作成
@@ -48,7 +48,7 @@ export default function HomePage() {
         <div>
           <p className="mb-4">Todoの管理にはログインが必要です。</p>
           <button
-            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+            className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded"
             onClick={() => router.push("/auth/signin")}
           >
             ログイン
