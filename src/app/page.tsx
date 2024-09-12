@@ -27,20 +27,28 @@ export default function HomePage() {
       <h1 className="text-3xl font-bold mb-4">ようこそ Todoアプリへ</h1>
       {session ? (
         <div>
-          <p className="mb-4">こんにちは、{session.user?.email} さん！</p>{" "}
+          <p className="mb-4">
+            こんにちは、{session.user?.user_metadata.full_name} さん！
+          </p>{" "}
           {/* userが存在する場合 */}
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
             onClick={() => router.push("/todos")}
           >
             Todo一覧を見る
+          </button>
+          <button
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded mt-4"
+            onClick={() => router.push("/todos/create")}
+          >
+            新しいTodoを作成
           </button>
         </div>
       ) : (
         <div>
           <p className="mb-4">Todoの管理にはログインが必要です。</p>
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
             onClick={() => router.push("/auth/signin")}
           >
             ログイン
