@@ -38,7 +38,7 @@ export default function HomePage() {
             Todo一覧を見る
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded m-2"
+            className="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded m-2"
             onClick={() => router.push("/todos/create")}
           >
             新しいTodoを作成

@@ -104,19 +104,19 @@ export default function EditTodoPage({ params }: { params: { id: string } }) {
       </div>
       <div className="flex space-x-4">
         <button
-          className="bg-green-500 text-white px-4 py-2 rounded"
+          className="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded"
           onClick={handleUpdate}
         >
           更新
         </button>
         <button
-          className="bg-red-500 text-white px-4 py-2 rounded"
+          className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded"
           onClick={handleDelete}
         >
           削除
         </button>
         <button
-          className="bg-gray-500 text-white px-4 py-2 rounded"
+          className="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded"
           onClick={handleCancel}
         >
           キャンセル

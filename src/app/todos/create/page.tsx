@@ -14,13 +14,13 @@ export default function CreateTodoPage() {
   const validateInput = () => {
     // タイトルのバリデーション (50文字以内)
     if (title.length === 0 || title.length > 50) {
-      setError("タイトルは50文字以内で入力してください。");
+      setError("タイトルは0文字以上、50文字以内で入力してください。");
       return false;
     }
 
-    // 内容のバリデーション (100文字以内)
-    if (description.length > 100) {
-      setError("内容は100文字以内で入力してください。");
+    // 詳細のバリデーション (100文字以内)
+    if (title.length === 0 || description.length > 100) {
+      setError("詳細は0文字以上、100文字以内で入力してください。");
       return false;
     }
 
@@ -106,13 +106,13 @@ export default function CreateTodoPage() {
         </select>
       </div>
       <button
-        className="bg-green-500 text-white px-4 py-2 rounded"
+        className="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded"
         onClick={handleCreateTodo}
       >
         作成
       </button>
       <button
-        className="bg-gray-500 text-white px-4 py-2 rounded ml-4"
+        className="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded ml-4"
         onClick={handleCancel}
       >
         キャンセル
