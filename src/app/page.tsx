@@ -32,13 +32,13 @@ export default function HomePage() {
           </p>{" "}
           {/* userが存在する場合 */}
           <button
-            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded m-2"
             onClick={() => router.push("/todos")}
           >
             Todo一覧を見る
           </button>
           <button
-            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded mt-4"
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded m-2"
             onClick={() => router.push("/todos/create")}
           >
             新しいTodoを作成

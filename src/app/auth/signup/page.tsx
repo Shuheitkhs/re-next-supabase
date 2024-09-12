@@ -30,12 +30,12 @@ export default function SignIn() {
   return (
     <div className="flex justify-center items-center h-screen">
       <div>
-        <h1 className="text-2xl font-bold mb-4">Sign in with Google</h1>
+        <h1 className="text-2xl font-bold mb-4">Googleでサインインできます</h1>
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={handleGoogleLogin}
         >
-          Sign in with Google
+          Googleでサインイン
         </button>
       </div>
     </div>
