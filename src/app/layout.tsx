@@ -35,7 +35,7 @@ export default function RootLayout({
     return () => {
       authListener.subscription.unsubscribe();
     };
-  }, []);
+  }, [router]);
 
   return (
     <html lang="ja">
