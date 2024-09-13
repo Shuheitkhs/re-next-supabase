@@ -1,14 +1,15 @@
 "use client";
 
 import { supabase } from "@/lib/supabaseClient";
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface Todo {
   id: string;
   title: string;
   description: string;
   status: string;
+  user_id: string;
 }
 
 export default function TodoDetailPage({ params }: { params: { id: string } }) {
@@ -21,12 +22,12 @@ export default function TodoDetailPage({ params }: { params: { id: string } }) {
         .from("todos")
         .select("*")
         .eq("id", params.id)
-        .single(); // 特定のTodoを取得
+        .single();
 
       if (error) {
         console.error("Error fetching todo:", error.message);
       } else {
-        setTodo(data); // 取得したTodoデータを状態にセット
+        setTodo(data);
       }
     };
 
@@ -34,19 +35,24 @@ export default function TodoDetailPage({ params }: { params: { id: string } }) {
   }, [params.id]);
 
   if (!todo) {
-    return <p>Loading...</p>; // ローディング中の表示
+    return <p>Loading...</p>;
   }
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">{todo.title}</h1>{" "}
-      {/* タイトルを表示 */}
-      <p className="mb-4">{todo.description}</p> {/* 詳細を表示 */}
-      <p className="text-gray-500">ステータス: {todo.status}</p>{" "}
-      {/* ステータスを表示 */}
+      <h1 className="text-2xl font-bold mb-4">Todo詳細</h1>
+      <p>
+        <strong>タイトル:</strong> {todo.title}
+      </p>
+      <p>
+        <strong>詳細:</strong> {todo.description}
+      </p>
+      <p>
+        <strong>ステータス:</strong> {todo.status}
+      </p>
       <button
         className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
-        onClick={() => router.push(`/todos/${todo.id}/edit`)} // 編集ページへのリンク
+        onClick={() => router.push(`/todos/${todo.id}/edit`)}
       >
         編集
       </button>

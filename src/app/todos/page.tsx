@@ -46,8 +46,8 @@ export default function TodoListPage() {
     fetchSession();
   }, []);
 
-  const handleEdit = (id: string) => {
-    router.push(`/todos/${id}/edit`);
+  const handleDisc = (id: string) => {
+    router.push(`/todos/${id}`);
   };
 
   // `todos`を`filteredTodoList`にフィルタリング
@@ -91,14 +91,12 @@ export default function TodoListPage() {
             <p>{todo.description}</p>
             <p className="text-sm text-gray-500">{todo.status}</p>
 
-            {todo.user_id === userId && ( // 自分のTodoだけに編集ボタンを表示
-              <button
-                className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-2"
-                onClick={() => handleEdit(todo.id)}
-              >
-                編集
-              </button>
-            )}
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-2"
+              onClick={() => handleDisc(todo.id)}
+            >
+              詳細へ
+            </button>
           </li>
         ))}
       </ul>
