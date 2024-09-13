@@ -114,6 +114,9 @@ export default function TodoDetailPage({ params }: { params: { id: string } }) {
     }
   };
 
+  const handleCancel = () => {
+    router.push("/todos"); // キャンセルした場合も一覧に戻る
+  };
   if (!todo) {
     return <p>Loading...</p>;
   }
@@ -136,6 +139,14 @@ export default function TodoDetailPage({ params }: { params: { id: string } }) {
       >
         編集
       </button>
+
+      <button
+        className="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded ml-3"
+        onClick={handleCancel}
+      >
+        キャンセル
+      </button>
+
       <div className="mt-8">
         <h2 className="text-xl font-bold mb-4">コメント</h2>
         {comments.length === 0 ? (
